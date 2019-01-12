@@ -5,7 +5,7 @@ import java.util.Random;
 /**
 * @ClassName: BioMainTest
 * @Description: (Bio 测试类)
-* @author: lei3.shi@midea.com
+* @author: tin
 * @date: 2019-1-12 22:03
 */
 public class BioMainTest {

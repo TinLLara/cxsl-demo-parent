@@ -8,7 +8,7 @@ import java.net.Socket;
 /**
 * @ClassName: BioClient
 * @Description: (阻塞式I/O创建的客户端)
-* @author: lei3.shi@midea.com
+* @author: tin
 * @date: 2019-1-12 21:58
 */
 public class BioClient {

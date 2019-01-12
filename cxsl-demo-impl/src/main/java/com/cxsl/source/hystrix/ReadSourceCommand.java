@@ -13,7 +13,7 @@ import com.netflix.hystrix.HystrixThreadPoolProperties;
 /**
 * @ClassName: ReadSourceCommand
 * @Description: (hystrix source reading demo)
-* @author: lei3.shi@midea.com
+* @author: tin
 * @date: 2019-1-8 9:40
 */
 public class ReadSourceCommand extends HystrixCommand<String>{

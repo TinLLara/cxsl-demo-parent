@@ -9,7 +9,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 /**
 * @ClassName: ServerHandler01
 * @Description: (Netty server-side handler.)
-* @author: lei3.shi@midea.com
+* @author: tin
 * @date: 2018-12-13 11:41
 */
 public class ServerHandler01 extends SimpleChannelInboundHandler<String> {

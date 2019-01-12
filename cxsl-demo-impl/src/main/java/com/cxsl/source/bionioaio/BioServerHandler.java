@@ -8,7 +8,7 @@ import java.net.Socket;
 /**
 * @ClassName: BioServerHandler
 * @Description: (用于处理一个客户端的Socket请求)
-* @author: lei3.shi@midea.com
+* @author: tin
 * @date: 2019-1-12 21:57
 */
 public class BioServerHandler implements Runnable{

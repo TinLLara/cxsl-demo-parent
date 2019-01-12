@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 /**
 * @ClassName: HystrixCaller
 * @Description: (hystrix caller)
-* @author: lei3.shi@midea.com
+* @author: tin
 * @date: 2019-1-8 9:38
 */
 public class HystrixCaller {

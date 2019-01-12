@@ -7,7 +7,7 @@ import java.net.Socket;
 /**
 * @ClassName: BioServer
 * @Description: (BIO服务端源码)
-* @author: lei3.shi@midea.com
+* @author: tin
 * @date: 2019-1-12 21:53
 */
 public final class BioServer {

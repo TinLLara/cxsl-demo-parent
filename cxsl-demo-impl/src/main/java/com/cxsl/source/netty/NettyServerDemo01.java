@@ -17,7 +17,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
 * @ClassName: NettyServerDemo01
 * @Description: (Netty源码阅读01)
-* @author: lei3.shi@midea.com 
+* @author: tin
 * @date: 2018-12-12 15:54
 */
 public class NettyServerDemo01 {
