@@ -1,0 +1,99 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] cxsl-demo-parent
+[INFO] cxsl-demo-api
+[INFO] cxsl-demo-impl
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building cxsl-demo-parent 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ cxsl-demo-parent ---
+[INFO] com.sz-cxsl.demo:cxsl-demo-parent:pom:1.0-SNAPSHOT
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building cxsl-demo-api 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ cxsl-demo-api ---
+[INFO] com.sz-cxsl.demo:cxsl-demo-api:jar:1.0-SNAPSHOT
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building cxsl-demo-impl 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+Downloading: http://10.16.11.201:9000/nexus/content/groups/public/com/sz-cxsl/demo/cxsl-demo-api/1.0-SNAPSHOT/maven-metadata.xml
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ cxsl-demo-impl ---
+[INFO] com.sz-cxsl.demo:cxsl-demo-impl:jar:1.0-SNAPSHOT
+[INFO] +- com.sz-cxsl.demo:cxsl-demo-api:jar:1.0-SNAPSHOT:compile
+[INFO] +- io.netty:netty-all:jar:5.0.0.Alpha1:compile
+[INFO] +- com.alibaba.citrus.tool:antx-autoconfig:jar:1.2:compile
+[INFO] +- org.seleniumhq.selenium:selenium-java:jar:3.4.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-api:jar:3.4.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-chrome-driver:jar:3.4.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-edge-driver:jar:3.4.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-firefox-driver:jar:3.4.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-ie-driver:jar:3.4.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-opera-driver:jar:3.4.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-remote-driver:jar:3.4.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-safari-driver:jar:3.4.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-support:jar:3.4.0:compile
+[INFO] |  +- cglib:cglib-nodep:jar:3.2.4:compile
+[INFO] |  +- org.apache.commons:commons-exec:jar:1.3:compile
+[INFO] |  +- org.apache.commons:commons-lang3:jar:3.5:compile
+[INFO] |  +- commons-codec:commons-codec:jar:1.10:compile
+[INFO] |  +- commons-io:commons-io:jar:2.5:compile
+[INFO] |  +- commons-logging:commons-logging:jar:1.2:compile
+[INFO] |  +- org.w3c.css:sac:jar:1.3:compile
+[INFO] |  +- net.sourceforge.cssparser:cssparser:jar:0.9.22:compile
+[INFO] |  +- com.google.code.gson:gson:jar:2.8.0:compile
+[INFO] |  +- com.google.guava:guava:jar:21.0:compile
+[INFO] |  +- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO] |  +- net.sourceforge.htmlunit:htmlunit:jar:2.26:compile
+[INFO] |  +- net.sourceforge.htmlunit:htmlunit-core-js:jar:2.26:compile
+[INFO] |  +- net.sourceforge.htmlunit:neko-htmlunit:jar:2.25:compile
+[INFO] |  +- org.apache.httpcomponents:httpclient:jar:4.5.3:compile
+[INFO] |  +- org.apache.httpcomponents:httpcore:jar:4.4.6:compile
+[INFO] |  +- org.apache.httpcomponents:httpmime:jar:4.5.3:compile
+[INFO] |  +- org.eclipse.jetty:jetty-io:jar:9.4.1.v20170120:compile
+[INFO] |  +- org.eclipse.jetty:jetty-util:jar:9.4.1.v20170120:compile
+[INFO] |  +- net.java.dev.jna:jna:jar:4.1.0:compile
+[INFO] |  +- net.java.dev.jna:jna-platform:jar:4.1.0:compile
+[INFO] |  +- junit:junit:jar:4.12:compile
+[INFO] |  +- com.codeborne:phantomjsdriver:jar:1.4.0:compile
+[INFO] |  +- org.seleniumhq.selenium:htmlunit-driver:jar:2.26:compile
+[INFO] |  +- javax.servlet:javax.servlet-api:jar:3.1.0:compile
+[INFO] |  +- org.eclipse.jetty.websocket:websocket-api:jar:9.4.3.v20170317:compile
+[INFO] |  +- org.eclipse.jetty.websocket:websocket-client:jar:9.4.3.v20170317:compile
+[INFO] |  |  \- org.eclipse.jetty:jetty-client:jar:9.4.3.v20170317:compile
+[INFO] |  |     \- org.eclipse.jetty:jetty-http:jar:9.4.3.v20170317:compile
+[INFO] |  +- org.eclipse.jetty.websocket:websocket-common:jar:9.4.3.v20170317:compile
+[INFO] |  +- xalan:serializer:jar:2.7.2:compile
+[INFO] |  +- xalan:xalan:jar:2.7.2:compile
+[INFO] |  +- xerces:xercesImpl:jar:2.11.0:compile
+[INFO] |  \- xml-apis:xml-apis:jar:1.4.01:compile
+[INFO] +- com.netflix.hystrix:hystrix-core:jar:1.5.12:compile
+[INFO] |  +- org.slf4j:slf4j-api:jar:1.7.0:compile
+[INFO] |  +- com.netflix.archaius:archaius-core:jar:0.4.1:compile
+[INFO] |  |  \- commons-configuration:commons-configuration:jar:1.8:compile
+[INFO] |  |     \- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  +- io.reactivex:rxjava:jar:1.2.0:compile
+[INFO] |  \- org.hdrhistogram:HdrHistogram:jar:2.1.9:compile
+[INFO] \- ch.qos.logback:logback-classic:jar:1.1.7:compile
+[INFO]    \- ch.qos.logback:logback-core:jar:1.1.7:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] cxsl-demo-parent ................................... SUCCESS [  5.216 s]
+[INFO] cxsl-demo-api ...................................... SUCCESS [  0.191 s]
+[INFO] cxsl-demo-impl ..................................... SUCCESS [  4.173 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.579 s
+[INFO] Finished at: 2019-01-10T16:58:24+08:00
+[INFO] Final Memory: 15M/187M
+[INFO] ------------------------------------------------------------------------
+[WARNING] The requested profile "profile" could not be activated because it does not exist.
