@@ -16,7 +16,10 @@ public class BioMainTest {
             @Override
             public void run() {
                 try {
-                    BioServer.start();
+                    //BIO服务启动
+                    //BioServer.start();
+                    //伪异步IO服务启动
+                    WioServer.start();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -31,7 +34,7 @@ public class BioMainTest {
             @SuppressWarnings("static-access")
             @Override
             public void run() {
-                while(true){
+                while(true) {
                     //随机产生算术表达式
                     String expression = random.nextInt(10)+""+operators[random.nextInt(4)]+(random.nextInt(10)+1);
                     BioClient.send(expression);
