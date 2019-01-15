@@ -29,7 +29,7 @@ public class NioServerHandle implements Runnable{
             //打开监听通道
             serverChannel = ServerSocketChannel.open();
             //如果为 true，则此通道将被置于阻塞模式；如果为 false，则此通道将被置于非阻塞模式
-            serverChannel.configureBlocking(false);//开启非阻塞模式
+            serverChannel.configureBlocking(false);
             //绑定端口 backlog设为1024
             serverChannel.socket().bind(new InetSocketAddress(port),1024);
             //监听客户端连接请求
@@ -42,9 +42,11 @@ public class NioServerHandle implements Runnable{
             System.exit(1);
         }
     }
+
     public void stop(){
         started = false;
     }
+
     @Override
     public void run() {
         //循环遍历selector
@@ -76,12 +78,13 @@ public class NioServerHandle implements Runnable{
             }
         }
         //selector关闭后会自动释放里面管理的资源
-        if(selector != null)
-            try{
+        if(selector != null) {
+            try {
                 selector.close();
-            }catch (Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
     }
     private void handleInput(SelectionKey key) throws IOException{
         if(key.isValid()){
