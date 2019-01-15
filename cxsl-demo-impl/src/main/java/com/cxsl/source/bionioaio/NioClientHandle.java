@@ -28,7 +28,8 @@ public class NioClientHandle implements Runnable{
             //打开监听通道
             socketChannel = SocketChannel.open();
             //如果为 true，则此通道将被置于阻塞模式；如果为 false，则此通道将被置于非阻塞模式
-            socketChannel.configureBlocking(false);//开启非阻塞模式
+            //开启非阻塞模式
+            socketChannel.configureBlocking(false);
             started = true;
         }catch(IOException e){
             e.printStackTrace();
@@ -133,7 +134,9 @@ public class NioClientHandle implements Runnable{
     }
     private void doConnect() throws IOException{
         if(socketChannel.connect(new InetSocketAddress(host,port)));
-        else socketChannel.register(selector, SelectionKey.OP_CONNECT);
+        else {
+            socketChannel.register(selector, SelectionKey.OP_CONNECT);
+        }
     }
     public void sendMsg(String msg) throws Exception{
         socketChannel.register(selector, SelectionKey.OP_READ);
