@@ -11,6 +11,23 @@
 
     <artifactId>cxsl-demo-api</artifactId>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.14.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>maven-lombok-plugin</artifactId>
+            <version>0.9.3.1</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
