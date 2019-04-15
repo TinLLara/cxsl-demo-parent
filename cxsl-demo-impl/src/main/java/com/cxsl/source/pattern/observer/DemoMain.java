@@ -11,8 +11,10 @@ package com.cxsl.source.pattern.observer;
 public class DemoMain {
     public static void main(String[] args) {
         BenzBehaviorSubject bbs = new BenzBehaviorSubject();
-        ConsumerObserver co = new ConsumerObserver();
-        bbs.addObserver(co);
+        ConsumerObserver co1 = new ConsumerObserver();
+        ConsumerObserver co2 = new ConsumerObserver();
+        bbs.addObserver(co1);
+        bbs.addObserver(co2);
         bbs.notifyConsumer();
     }
 }
