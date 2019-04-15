@@ -2,6 +2,11 @@ package com.cxsl.source.pattern.decorator;
 
 /**
  * Demo主入口类
+ * 装饰者模式
+ * 1、装饰者与被装饰者父类 -- 接口或抽象类，定义基本行为 Car.java;
+ * 2、被装饰者类定义 实现1中接口或继承抽象类 BenzCar.java;
+ * 3、抽象装饰者 同样实现1中接口或继承抽象类 Decorator.java;
+ * 4、具体装饰者，继承3中抽象装饰者 EngineDecorator.java\WheelsDecorator.java;
  * @author tin
  */
 public class DemoMain {
