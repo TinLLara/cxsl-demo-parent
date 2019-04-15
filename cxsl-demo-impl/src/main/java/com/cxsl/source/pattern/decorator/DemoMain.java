@@ -1,5 +1,9 @@
 package com.cxsl.source.pattern.decorator;
 
+/**
+ * Demo主入口类
+ * @author tin
+ */
 public class DemoMain {
     public static void main(String[] args) {
         /**
