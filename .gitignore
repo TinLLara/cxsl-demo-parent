@@ -37,4 +37,4 @@ cxsl-demo-impl/src/main/java/com/cxsl/source/dubbo/
 cxsl-demo-impl/src/main/java/com/cxsl/source/zookeeper/
 cxsl-demo-impl/target/generated-sources/
 catalina.base_IS_UNDEFINED
-/cxsl-demo-parent/.idea
+
