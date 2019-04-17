@@ -31,3 +31,10 @@ gen### Java template
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+.gitignore
+cxsl-demo-api/target/generated-sources/
+cxsl-demo-impl/src/main/java/com/cxsl/source/dubbo/
+cxsl-demo-impl/src/main/java/com/cxsl/source/zookeeper/
+cxsl-demo-impl/target/generated-sources/
+catalina.base_IS_UNDEFINED
+/cxsl-demo-parent/.idea
