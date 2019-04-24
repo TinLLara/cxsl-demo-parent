@@ -9,15 +9,15 @@
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 	<!--core MyBatis配置 -->
-	<bean id="coreSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<!--<bean id="coreSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="coreDataSource" />
 		<property name="configLocation" value="classpath:/spring-config/mybatis-configuration.xml" />
-		<!-- 自动扫描entity目录 -->
+		&lt;!&ndash; 自动扫描entity目录 &ndash;&gt;
 		<property name="typeAliasesPackage" value="com.cxsl.trade.invoice.impl.entity" />
-		<!-- 显式指定Mapper文件位置 -->
+		&lt;!&ndash; 显式指定Mapper文件位置 &ndash;&gt;
 		<property name="mapperLocations" value="classpath:/sqlmaps/**/*Mapper.xml" />
 	</bean>
-	<!-- 扫描basePackage下所有以@IRepository标识的 接口 -->
+	&lt;!&ndash; 扫描basePackage下所有以@IRepository标识的 接口 &ndash;&gt;
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="coreSqlSessionFactory"></property>
 		<property name="basePackage" value="com.cxsl.trade.invoice.impl.dao" />
@@ -25,13 +25,13 @@
 			value="com.cxsl.source.annotation.IRepository" />
 	</bean>
 	
-	<!--tc 从库配置 -->
+	&lt;!&ndash;tc 从库配置 &ndash;&gt;
 	<bean id="tcSlaveReadSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="tcSlaveReadDataSource" />
 		<property name="configLocation" value="classpath:/spring-config/mybatis-configuration.xml" />
-		<!-- 自动扫描entity目录 -->
+		&lt;!&ndash; 自动扫描entity目录 &ndash;&gt;
 		<property name="typeAliasesPackage" value="com.cxsl.trade.invoice.impl.entity" />
-		<!-- 显式指定Mapper文件位置 -->
+		&lt;!&ndash; 显式指定Mapper文件位置 &ndash;&gt;
 		<property name="mapperLocations" value="classpath:/readsqlmaps/**/*Mapper.xml" />
 	</bean> 
 	
@@ -40,13 +40,13 @@
 		<property name="basePackage" value="com.cxsl.trade.invoice.impl.dao.read" />
 		<property name="annotationClass" value="com.cxsl.source.annotation.RRepository"/>
 	</bean>
-	<!--tc 主库配置 -->
+	&lt;!&ndash;tc 主库配置 &ndash;&gt;
 	<bean id="tcMasterReadSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="tcMasterReadDataSource" />
 		<property name="configLocation" value="classpath:/spring-config/mybatis-configuration.xml" />
-		<!-- 自动扫描entity目录 -->
+		&lt;!&ndash; 自动扫描entity目录 &ndash;&gt;
 		<property name="typeAliasesPackage" value="com.cxsl.trade.invoice.impl.entity" />
-		<!-- 显式指定Mapper文件位置 -->
+		&lt;!&ndash; 显式指定Mapper文件位置 &ndash;&gt;
 		<property name="mapperLocations" value="classpath:/readsqlmaps/**/*Mapper.xml" />
 	</bean> 
 	
@@ -54,10 +54,10 @@
 		<property name="sqlSessionFactoryBeanName" value="tcMasterReadSqlSessionFactory"></property>
 		<property name="basePackage" value="com.cxsl.trade.invoice.impl.dao.read.master" />
 		<property name="annotationClass" value="com.cxsl.source.annotation.MRepository"/>
-	</bean>
+	</bean>-->
 	
 	
-	<tx:annotation-driven transaction-manager="txManager" />
+	<!--<tx:annotation-driven transaction-manager="txManager" />
 
 	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -73,5 +73,5 @@
 		p:dataSource-ref="coreDataSource" />
 		
 	<bean id="readJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
-		p:dataSource-ref="tcSlaveReadDataSource" />
+		p:dataSource-ref="tcSlaveReadDataSource" />-->
 </beans>
