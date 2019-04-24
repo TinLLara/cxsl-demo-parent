@@ -23,12 +23,12 @@
         </property>
 		<property name="serviceUrl" value="${manage.shopService.url}"/>
 		<property name="serviceInterface">
-			<value>com.midea.trade.manage.api.service.ShopFacade</value>
+			<value>com.cxsl.trade.manage.api.service.ShopFacade</value>
 		</property>
 	</bean>
 	
 	<!-- 发送短信邮件接口相关配置 -->
-    <bean id="emailSmsService"
+   <!-- <bean id="emailSmsService"
 		class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
 		<property name="overloadEnabled" value="true" />                      
         <property name="proxyFactory">
@@ -38,45 +38,13 @@
 		 <property name="overloadEnabled" value="true" />    
             </bean>
         </property>  
-		<!-- 请求代理服务地址  -->
+		&lt;!&ndash; 请求代理服务地址  &ndash;&gt;
 		<property name="serviceUrl" value="${email.hessian.url}"/>
-		<!-- 接口定义 -->
+		&lt;!&ndash; 接口定义 &ndash;&gt;
 		<property name="serviceInterface">
-			<value>com.midea.trade.dmz.api.rpc.hessian.ICommonServiceHessian</value>
+			<value>com.trade.dmz.api.rpc.hessian.ICommonServiceHessian</value>
 		</property>
-	</bean>
-	
-	<!-- 电子发票接口（航天信息） -->
-    <bean id="eInVoiceService"
-		class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
-		<property name="overloadEnabled" value="true" />                      
-        <property name="proxyFactory">
-            <bean class="com.caucho.hessian.client.HessianProxyFactory">
-                 <property name="readTimeout" value="5000" />
-                 <property name="connectTimeout"  value="5000" />
-            </bean>
-        </property>
-		<!-- 请求代理服务地址  -->
-		<property name="serviceUrl" value="${eInvoice.hessian.url}"/>
-		<!-- 接口定义 -->
-		<property name="serviceInterface">
-			<value>com.aisinogd.called.eli.IElectronicInvoiceService</value>
-		</property>
-	</bean>
-	<!-- 权限组件接口 -->
-	<bean id="authOptionsHessian"
-		class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
-		<property name="overloadEnabled" value="true" />                      
-        <property name="proxyFactory">
-            <bean class="com.caucho.hessian.client.HessianProxyFactory">
-                 <property name="readTimeout" value="5000" />
-                 <property name="connectTimeout"  value="5000" />
-            </bean>
-        </property>
-		<property name="serviceUrl" value="${auth.hessain.url}"></property>
-		<property name="serviceInterface">
-			<value>com.midea.trade.permission.api.rpc.hessian.IAuthOptionsHessian</value>
-		</property>
-	</bean>
+	</bean>-->
+
 </beans>
 

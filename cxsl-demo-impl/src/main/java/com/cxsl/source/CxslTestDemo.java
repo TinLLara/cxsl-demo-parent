@@ -10,5 +10,6 @@ public class CxslTestDemo {
         byte t1 = 1;
         Byte t2 = new Byte((byte) 1);
         System.out.println(t1==t2);
+        String.valueOf(2222);
     }
 }

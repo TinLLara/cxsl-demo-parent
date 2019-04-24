@@ -5,7 +5,7 @@
 	<property scope="context" name="moduleName" value="littleswan" />
 	<property scope="context" name="reportMqAddr" value="${reportMqAddr}" />-->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
-    	<!-- <Filter class="com.midea.trade.fr.logback.filter.FaultReportFilter" /> -->
+    	<!-- <Filter class="com.cxsl.trade.fr.logback.filter.FaultReportFilter" /> -->
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss}[%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder> 
@@ -61,7 +61,7 @@
 		<appender-ref ref="console"/>
 </logger>
     
- <logger name="com.midea.littleswan.mall.impl" level="DEBUG"/>
+ <logger name="com.cxsl.littleswan.mall.impl" level="DEBUG"/>
  <logger name="org.apache.zookeeper" level="INFO" addtivity="false"/>
  <logger name="o.a.z.client" level="INFO" addtivity="false"/>
  <logger name="monitor">

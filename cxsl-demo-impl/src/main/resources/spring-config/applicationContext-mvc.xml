@@ -15,7 +15,7 @@
 	<!-- 注解驱动 -->
 	<mvc:annotation-driven />
 	
-	<context:component-scan base-package="com.midea.trade.invoice.impl.controller" />
+	<context:component-scan base-package="com.cxsl.source" />
  
 	 <bean id="propertyConfigurer1" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
 	    <property name="locations">  
@@ -58,15 +58,15 @@
 	</bean>
 	
 	<bean id="jsonDateSerializer"
-		class="com.midea.trade.invoice.utils.JsonDateSerializer" />
+		class="com.cxsl.source.utils.JsonDateSerializer" />
 		
-	<bean id="jacksonObjectMapper" class="com.midea.trade.invoice.utils.MyObjectMapper" />
+	<bean id="jacksonObjectMapper" class="com.cxsl.source.utils.MyObjectMapper" />
 	
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">
 			<list>
-				<bean class="com.midea.trade.invoice.utils.CharsetStringHttpMessageConverter"></bean>
+				<bean class="com.cxsl.source.utils.CharsetStringHttpMessageConverter"></bean>
 				<ref bean="stringConverter" />
 				<ref bean="jsonConverter" />
 			</list>

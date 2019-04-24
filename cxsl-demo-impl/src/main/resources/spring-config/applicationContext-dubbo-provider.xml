@@ -18,55 +18,10 @@
          <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}" />
          
          <!-- 声明需要暴露的服务接口 -->
-    	<dubbo:service interface="com.midea.dataexporter.api.service.DataExporterCallBack"
-                   ref="invoiceDataExporterCallBack"
-                   provider="trade_invoice_provider"
-                   version="0.0.1.daily"
-                   group="TRADE_INVOICE_INFO"/>
-                   
-    	<!-- 和本地bean一样实现服务 -->
-    	<bean id="invoiceDataExporterCallBack" class="com.midea.trade.invoice.api.facade.impl.InvoiceDataExporterCallBackFacadeImpl"/>
-    	
-    	 <!-- 导出作废红冲申请回调接口 -->
-    	<dubbo:service interface="com.midea.dataexporter.api.service.DataExporterCallBack"
-                   ref="writeoffDataExporterCallBack"
-                   provider="trade_invoice_provider"
-                   version="0.0.1.daily"
-                   group="TRADE_INVOICE_WRITEOFF_APPLY"/>
 
-    	<!-- 导出作废红冲申请回调实现类 -->
-    	<bean id="writeoffDataExporterCallBack" class="com.midea.trade.invoice.api.facade.impl.WriteoffDataExporterCallBackFacadeImpl"/>
-    	
-    	 <!-- 声明需要暴露的服务接口 -->
-    	<dubbo:service interface="com.midea.dataexporter.api.service.DataExporterCallBack"
-                   ref="accountDataExporterCallBack"
-                   provider="trade_invoice_provider"
-                   version="0.0.1.daily"
-                   group="ACCOUNT_INVOICE_INFO"/>
-                   
-         <!-- 和本地bean一样实现服务 -->
-    	<bean id="accountDataExporterCallBack" class="com.midea.trade.invoice.api.facade.impl.AccountDataExporterCallBackFacadeImpl"/>
-        
-        <dubbo:service interface="com.midea.trade.invoice.api.facade.InvoiceFacade"
-                   ref="tradeInvoiceFacade"></dubbo:service>
+        <!--<dubbo:service interface="com.trade.invoice.api.facade.InvoiceFacade"
+                   ref="tradeInvoiceFacade"></dubbo:service>-->
         <!-- 和本地bean一样实现服务 -->
-        <bean id="tradeInvoiceFacade" class="com.midea.trade.invoice.api.facade.impl.InvoiceFacadeImp"/>
+        <!--<bean id="tradeInvoiceFacade" class="com.trade.invoice.api.facade.impl.InvoiceFacadeImp"/>-->
 
-		<!-- 声明需要暴露的服务接口 -->
-		<dubbo:service interface="com.midea.trade.invoice.api.facade.InvoiceInfoQueryFacade"
-					   ref="invoiceInfoQueryFacade"/>
-
-		<!-- 和本地bean一样实现服务 -->
-		<bean id="invoiceInfoQueryFacade" class="com.midea.trade.invoice.api.facade.impl.InvoiceInfoQueryFacadeImp"/>
-
-		<!-- 声明需要暴露的服务接口 -->
-		<dubbo:service interface="com.midea.dataexporter.api.service.DataExporterCallBack"
-					   ref="speChannelDataExporterCallBack"
-					   provider="trade_invoice_provider"
-					   version="0.0.1.daily"
-					   group="SPEC_CHANNEL_INVOICE_INFO"/>
-
-		<!-- 和本地bean一样实现服务 -->
-		<bean id="speChannelDataExporterCallBack" class="com.midea.trade.invoice.api.facade.impl.SpeChannelDataExporterCallBackFacadeImpl"/>
-        
 </beans>

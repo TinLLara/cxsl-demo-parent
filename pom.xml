@@ -14,7 +14,7 @@
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <midea.common.version>0.0.1</midea.common.version>
+        <common.version>0.0.1</common.version>
         <spring.version>3.2.5.RELEASE</spring.version>
     </properties>
 
