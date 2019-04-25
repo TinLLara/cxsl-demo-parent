@@ -13,6 +13,8 @@
     
     <context:annotation-config />
 
+	<aop:aspectj-autoproxy />
+
 	<context:component-scan base-package="com.cxsl.source" />
 
 	<aop:aspectj-autoproxy proxy-target-class="true"/>
