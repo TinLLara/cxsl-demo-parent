@@ -14,7 +14,7 @@
 		<setting name="defaultStatementTimeout" value="25000" />
 	</settings>
 	<plugins>
-		<plugin interceptor="com.cxsl.trade.invoice.pagehelper.PageHelper">
+		<plugin interceptor="com.cxsl.trade.cxsl.pagehelper.PageHelper">
 			<property name="dialect" value="mysql" />
 		</plugin>
 	</plugins>

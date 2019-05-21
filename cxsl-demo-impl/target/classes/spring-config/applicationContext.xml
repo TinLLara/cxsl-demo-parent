@@ -13,6 +13,8 @@
     
     <context:annotation-config />
 
+	<aop:aspectj-autoproxy />
+
 	<context:component-scan base-package="com.cxsl.source" />
 
 	<aop:aspectj-autoproxy proxy-target-class="true"/>
@@ -20,8 +22,8 @@
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 	    <property name="locations">  
 	       <list>   
-	       	  <value>classpath:config/config.properties</value>  
-	       	  <value>classpath:config/redis.properties</value> 
+	       	  <value>classpath:config/config.properties</value>
+	       	  <value>classpath:config/redis.properties</value>
 	       	  <value>classpath:config/rocketmq.properties</value>
 	       	  <value>classpath:config/db.properties</value>
 	       	  <value>classpath:config/dubbo.properties</value>
@@ -29,14 +31,14 @@
 	    </property>  
 	</bean> 	
 	
-	<import resource="classpath:spring-config/applicationContext-datasource.xml" />
+	<!--<import resource="classpath:spring-config/applicationContext-datasource.xml" />
     <import resource="classpath:spring-config/applicationContext-dao.xml" />
-	<import resource="classpath:spring-config/applicationContext-redis.xml" />
+	<import resource="classpath:spring-config/applicationContext-redis.xml" />-->
 	<import resource="classpath:spring-config/applicationContext-mvc.xml" />
-	<import resource="classpath:spring-config/applicationContext-mq.xml" />
+	<!--<import resource="classpath:spring-config/applicationContext-mq.xml" />
 	<import resource="classpath:spring-config/applicationContext-dubbo-provider.xml" />
 	<import resource="classpath:spring-config/applicationContext-dubbo-client.xml" />
 	<import resource="classpath:spring-config/applicationContext-hessian.xml" />
 	<import resource="classpath:spring-config/applicationContext-facade.xml" />
-	<import resource="classpath:spring-config/es-beans.xml" />
+	<import resource="classpath:spring-config/es-beans.xml" />-->
 </beans>

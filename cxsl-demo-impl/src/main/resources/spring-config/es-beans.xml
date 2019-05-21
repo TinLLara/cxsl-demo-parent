@@ -9,6 +9,6 @@
     http://www.springframework.org/schema/context/spring-context-3.2.xsd
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
-    <!--<bean id="checkInvoiceStatusJob" class="com.trade.invoice.impl.jobs.CheckInvoiceStatusJob"></bean>-->
+    <!--<bean id="checkcxslStatusJob" class="com.trade.cxsl.impl.jobs.CheckcxslStatusJob"></bean>-->
 
 </beans>

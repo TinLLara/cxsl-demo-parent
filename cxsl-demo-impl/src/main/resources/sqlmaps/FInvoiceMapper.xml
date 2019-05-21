@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.cxsl.trade.invoice.impl.dao.FInvoiceMapper" >
-  <resultMap id="BaseResultMap" type="com.cxsl.trade.invoice.impl.entity.FInvoice" >
-    <id column="invoice_id" property="invoiceId" jdbcType="BIGINT" />
+<mapper namespace="com.cxsl.trade.cxsl.impl.dao.FcxslMapper" >
+  <resultMap id="BaseResultMap" type="com.cxsl.trade.cxsl.impl.entity.Fcxsl" >
+    <id column="cxsl_id" property="cxslId" jdbcType="BIGINT" />
     <result column="source_type" property="sourceType" jdbcType="TINYINT" />
     <result column="cause_type" property="causeType" jdbcType="TINYINT" />
-    <result column="invoice_type" property="invoiceType" jdbcType="TINYINT" />
+    <result column="cxsl_type" property="cxslType" jdbcType="TINYINT" />
     <result column="bill_type" property="billType" jdbcType="TINYINT" />
     <result column="outer_order_id" property="outerOrderId" jdbcType="VARCHAR" />
     <result column="order_id" property="orderId" jdbcType="BIGINT" />
     <result column="shop_id" property="shopId" jdbcType="INTEGER" />
     <result column="platform_id" property="platformId" jdbcType="TINYINT" />
     <result column="pay_time" property="payTime" jdbcType="TIMESTAMP" />
-    <result column="invoice_title" property="invoiceTitle" jdbcType="VARCHAR" />
-    <result column="invoice_status" property="invoiceStatus" jdbcType="TINYINT" />
+    <result column="cxsl_title" property="cxslTitle" jdbcType="VARCHAR" />
+    <result column="cxsl_status" property="cxslStatus" jdbcType="TINYINT" />
     <result column="buyer_nick" property="buyerNick" jdbcType="VARCHAR" />
     <result column="seller_taxer_name" property="sellerTaxerName" jdbcType="VARCHAR" />
     <result column="seller_taxer_code" property="sellerTaxerCode" jdbcType="VARCHAR" />
-    <result column="invoice_amount" property="invoiceAmount" jdbcType="DECIMAL" />
-    <result column="invoice_num" property="invoiceNum" jdbcType="VARCHAR" />
-    <result column="invoice_code" property="invoiceCode" jdbcType="VARCHAR" />
-    <result column="red_invoice_num" property="redInvoiceNum" jdbcType="VARCHAR" />
-    <result column="invoice_date" property="invoiceDate" jdbcType="TIMESTAMP" />
+    <result column="cxsl_amount" property="cxslAmount" jdbcType="DECIMAL" />
+    <result column="cxsl_num" property="cxslNum" jdbcType="VARCHAR" />
+    <result column="cxsl_code" property="cxslCode" jdbcType="VARCHAR" />
+    <result column="red_cxsl_num" property="redcxslNum" jdbcType="VARCHAR" />
+    <result column="cxsl_date" property="cxslDate" jdbcType="TIMESTAMP" />
     <result column="pdf_url" property="pdfUrl" jdbcType="VARCHAR" />
     <result column="pic_url" property="picUrl" jdbcType="VARCHAR" />
     <result column="is_urgent" property="isUrgent" jdbcType="BIT" />
@@ -29,13 +29,13 @@
     <result column="sms_type" property="smsType" jdbcType="TINYINT" />
     <result column="sms_notice_status" property="smsNoticeStatus" jdbcType="TINYINT" />
     <result column="is_mix_split" property="isMixSplit" jdbcType="BIT" />
-    <result column="invoice_flow" property="invoiceFlow" jdbcType="VARCHAR" />
-    <result column="blue_invoice_id" property="blueInvoiceId" jdbcType="BIGINT" />
-    <result column="old_blue_invoice_id" property="oldBlueInvoiceId" jdbcType="BIGINT" />
+    <result column="cxsl_flow" property="cxslFlow" jdbcType="VARCHAR" />
+    <result column="blue_cxsl_id" property="bluecxslId" jdbcType="BIGINT" />
+    <result column="old_blue_cxsl_id" property="oldBluecxslId" jdbcType="BIGINT" />
     <result column="red_notice_num" property="redNoticeNum" jdbcType="VARCHAR" />
     <result column="down_time" property="downTime" jdbcType="TIMESTAMP" />
     <result column="return_time" property="returnTime" jdbcType="TIMESTAMP" />
-    <result column="invoice_remark" property="invoiceRemark" jdbcType="VARCHAR" />
+    <result column="cxsl_remark" property="cxslRemark" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="reject_reason" property="rejectReason" jdbcType="TINYINT" />
     <result column="reject_desc" property="rejectDesc" jdbcType="VARCHAR" />
@@ -112,22 +112,22 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    invoice_id, source_type, cause_type, invoice_type, bill_type, outer_order_id, order_id, 
-    shop_id, platform_id, pay_time, invoice_title, invoice_status, buyer_nick, seller_taxer_name, 
-    seller_taxer_code, invoice_amount, invoice_num, invoice_code, red_invoice_num, invoice_date, 
+    cxsl_id, source_type, cause_type, cxsl_type, bill_type, outer_order_id, order_id,
+    shop_id, platform_id, pay_time, cxsl_title, cxsl_status, buyer_nick, seller_taxer_name,
+    seller_taxer_code, cxsl_amount, cxsl_num, cxsl_code, red_cxsl_num, cxsl_date,
     pdf_url, pic_url, is_urgent, is_auto, sms_type, sms_notice_status, is_mix_split, 
-    invoice_flow, blue_invoice_id, old_blue_invoice_id, red_notice_num, down_time, return_time, 
-    invoice_remark, remark, reject_reason, reject_desc, red_reason_type, is_lost, is_lock, 
+    cxsl_flow, blue_cxsl_id, old_blue_cxsl_id, red_notice_num, down_time, return_time,
+    cxsl_remark, remark, reject_reason, reject_desc, red_reason_type, is_lost, is_lock,
     is_pre_reopen, is_ad, is_apply_writeoff, is_writeoff_result, err_msg, create_time, 
     update_time, gl_date, ims_customer_code, check_code
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cxsl.trade.invoice.impl.entity.FInvoiceExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cxsl.trade.cxsl.impl.entity.FcxslExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from f_invoice
+    from f_cxsl
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -138,48 +138,48 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from f_invoice
-    where invoice_id = #{invoiceId,jdbcType=BIGINT}
+    from f_cxsl
+    where cxsl_id = #{cxslId,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from f_invoice
-    where invoice_id = #{invoiceId,jdbcType=BIGINT}
+    delete from f_cxsl
+    where cxsl_id = #{cxslId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.cxsl.trade.invoice.impl.entity.FInvoiceExample" >
-    delete from f_invoice
+  <delete id="deleteByExample" parameterType="com.cxsl.trade.cxsl.impl.entity.FcxslExample" >
+    delete from f_cxsl
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.cxsl.trade.invoice.impl.entity.FInvoice" >
-    insert into f_invoice (invoice_id, source_type, cause_type, 
-      invoice_type, bill_type, outer_order_id, 
+  <insert id="insert" parameterType="com.cxsl.trade.cxsl.impl.entity.Fcxsl" >
+    insert into f_cxsl (cxsl_id, source_type, cause_type,
+      cxsl_type, bill_type, outer_order_id,
       order_id, shop_id, platform_id, 
-      pay_time, invoice_title, invoice_status, 
+      pay_time, cxsl_title, cxsl_status,
       buyer_nick, seller_taxer_name, seller_taxer_code, 
-      invoice_amount, invoice_num, invoice_code, 
-      red_invoice_num, invoice_date, pdf_url, 
+      cxsl_amount, cxsl_num, cxsl_code,
+      red_cxsl_num, cxsl_date, pdf_url,
       pic_url, is_urgent, is_auto, sms_type, 
-      sms_notice_status, is_mix_split, invoice_flow, 
-      blue_invoice_id, old_blue_invoice_id, red_notice_num, 
-      down_time, return_time, invoice_remark, 
+      sms_notice_status, is_mix_split, cxsl_flow,
+      blue_cxsl_id, old_blue_cxsl_id, red_notice_num,
+      down_time, return_time, cxsl_remark,
       remark, reject_reason, reject_desc, 
       red_reason_type, is_lost, is_lock, 
       is_pre_reopen, is_ad, is_apply_writeoff, 
       is_writeoff_result, err_msg, create_time, 
       update_time, gl_date, ims_customer_code, 
       check_code)
-    values (#{invoiceId,jdbcType=BIGINT}, #{sourceType,jdbcType=TINYINT}, #{causeType,jdbcType=TINYINT}, 
-      #{invoiceType,jdbcType=TINYINT}, #{billType,jdbcType=TINYINT}, #{outerOrderId,jdbcType=VARCHAR}, 
+    values (#{cxslId,jdbcType=BIGINT}, #{sourceType,jdbcType=TINYINT}, #{causeType,jdbcType=TINYINT},
+      #{cxslType,jdbcType=TINYINT}, #{billType,jdbcType=TINYINT}, #{outerOrderId,jdbcType=VARCHAR},
       #{orderId,jdbcType=BIGINT}, #{shopId,jdbcType=INTEGER}, #{platformId,jdbcType=TINYINT}, 
-      #{payTime,jdbcType=TIMESTAMP}, #{invoiceTitle,jdbcType=VARCHAR}, #{invoiceStatus,jdbcType=TINYINT}, 
+      #{payTime,jdbcType=TIMESTAMP}, #{cxslTitle,jdbcType=VARCHAR}, #{cxslStatus,jdbcType=TINYINT},
       #{buyerNick,jdbcType=VARCHAR}, #{sellerTaxerName,jdbcType=VARCHAR}, #{sellerTaxerCode,jdbcType=VARCHAR}, 
-      #{invoiceAmount,jdbcType=DECIMAL}, #{invoiceNum,jdbcType=VARCHAR}, #{invoiceCode,jdbcType=VARCHAR}, 
-      #{redInvoiceNum,jdbcType=VARCHAR}, #{invoiceDate,jdbcType=TIMESTAMP}, #{pdfUrl,jdbcType=VARCHAR}, 
+      #{cxslAmount,jdbcType=DECIMAL}, #{cxslNum,jdbcType=VARCHAR}, #{cxslCode,jdbcType=VARCHAR},
+      #{redcxslNum,jdbcType=VARCHAR}, #{cxslDate,jdbcType=TIMESTAMP}, #{pdfUrl,jdbcType=VARCHAR},
       #{picUrl,jdbcType=VARCHAR}, #{isUrgent,jdbcType=BIT}, #{isAuto,jdbcType=BIT}, #{smsType,jdbcType=TINYINT}, 
-      #{smsNoticeStatus,jdbcType=TINYINT}, #{isMixSplit,jdbcType=BIT}, #{invoiceFlow,jdbcType=VARCHAR}, 
-      #{blueInvoiceId,jdbcType=BIGINT}, #{oldBlueInvoiceId,jdbcType=BIGINT}, #{redNoticeNum,jdbcType=VARCHAR}, 
-      #{downTime,jdbcType=TIMESTAMP}, #{returnTime,jdbcType=TIMESTAMP}, #{invoiceRemark,jdbcType=VARCHAR}, 
+      #{smsNoticeStatus,jdbcType=TINYINT}, #{isMixSplit,jdbcType=BIT}, #{cxslFlow,jdbcType=VARCHAR},
+      #{bluecxslId,jdbcType=BIGINT}, #{oldBluecxslId,jdbcType=BIGINT}, #{redNoticeNum,jdbcType=VARCHAR},
+      #{downTime,jdbcType=TIMESTAMP}, #{returnTime,jdbcType=TIMESTAMP}, #{cxslRemark,jdbcType=VARCHAR},
       #{remark,jdbcType=VARCHAR}, #{rejectReason,jdbcType=TINYINT}, #{rejectDesc,jdbcType=VARCHAR}, 
       #{redReasonType,jdbcType=TINYINT}, #{isLost,jdbcType=BIT}, #{isLock,jdbcType=BIT}, 
       #{isPreReopen,jdbcType=BIT}, #{isAd,jdbcType=BIT}, #{isApplyWriteoff,jdbcType=BIT}, 
@@ -187,11 +187,11 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{glDate,jdbcType=TIMESTAMP}, #{imsCustomerCode,jdbcType=VARCHAR}, 
       #{checkCode,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cxsl.trade.invoice.impl.entity.FInvoice" >
-    insert into f_invoice
+  <insert id="insertSelective" parameterType="com.cxsl.trade.cxsl.impl.entity.Fcxsl" >
+    insert into f_cxsl
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="invoiceId != null" >
-        invoice_id,
+      <if test="cxslId != null" >
+        cxsl_id,
       </if>
       <if test="sourceType != null" >
         source_type,
@@ -199,8 +199,8 @@
       <if test="causeType != null" >
         cause_type,
       </if>
-      <if test="invoiceType != null" >
-        invoice_type,
+      <if test="cxslType != null" >
+        cxsl_type,
       </if>
       <if test="billType != null" >
         bill_type,
@@ -220,11 +220,11 @@
       <if test="payTime != null" >
         pay_time,
       </if>
-      <if test="invoiceTitle != null" >
-        invoice_title,
+      <if test="cxslTitle != null" >
+        cxsl_title,
       </if>
-      <if test="invoiceStatus != null" >
-        invoice_status,
+      <if test="cxslStatus != null" >
+        cxsl_status,
       </if>
       <if test="buyerNick != null" >
         buyer_nick,
@@ -235,20 +235,20 @@
       <if test="sellerTaxerCode != null" >
         seller_taxer_code,
       </if>
-      <if test="invoiceAmount != null" >
-        invoice_amount,
+      <if test="cxslAmount != null" >
+        cxsl_amount,
       </if>
-      <if test="invoiceNum != null" >
-        invoice_num,
+      <if test="cxslNum != null" >
+        cxsl_num,
       </if>
-      <if test="invoiceCode != null" >
-        invoice_code,
+      <if test="cxslCode != null" >
+        cxsl_code,
       </if>
-      <if test="redInvoiceNum != null" >
-        red_invoice_num,
+      <if test="redcxslNum != null" >
+        red_cxsl_num,
       </if>
-      <if test="invoiceDate != null" >
-        invoice_date,
+      <if test="cxslDate != null" >
+        cxsl_date,
       </if>
       <if test="pdfUrl != null" >
         pdf_url,
@@ -271,14 +271,14 @@
       <if test="isMixSplit != null" >
         is_mix_split,
       </if>
-      <if test="invoiceFlow != null" >
-        invoice_flow,
+      <if test="cxslFlow != null" >
+        cxsl_flow,
       </if>
-      <if test="blueInvoiceId != null" >
-        blue_invoice_id,
+      <if test="bluecxslId != null" >
+        blue_cxsl_id,
       </if>
-      <if test="oldBlueInvoiceId != null" >
-        old_blue_invoice_id,
+      <if test="oldBluecxslId != null" >
+        old_blue_cxsl_id,
       </if>
       <if test="redNoticeNum != null" >
         red_notice_num,
@@ -289,8 +289,8 @@
       <if test="returnTime != null" >
         return_time,
       </if>
-      <if test="invoiceRemark != null" >
-        invoice_remark,
+      <if test="cxslRemark != null" >
+        cxsl_remark,
       </if>
       <if test="remark != null" >
         remark,
@@ -342,8 +342,8 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="invoiceId != null" >
-        #{invoiceId,jdbcType=BIGINT},
+      <if test="cxslId != null" >
+        #{cxslId,jdbcType=BIGINT},
       </if>
       <if test="sourceType != null" >
         #{sourceType,jdbcType=TINYINT},
@@ -351,8 +351,8 @@
       <if test="causeType != null" >
         #{causeType,jdbcType=TINYINT},
       </if>
-      <if test="invoiceType != null" >
-        #{invoiceType,jdbcType=TINYINT},
+      <if test="cxslType != null" >
+        #{cxslType,jdbcType=TINYINT},
       </if>
       <if test="billType != null" >
         #{billType,jdbcType=TINYINT},
@@ -372,11 +372,11 @@
       <if test="payTime != null" >
         #{payTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="invoiceTitle != null" >
-        #{invoiceTitle,jdbcType=VARCHAR},
+      <if test="cxslTitle != null" >
+        #{cxslTitle,jdbcType=VARCHAR},
       </if>
-      <if test="invoiceStatus != null" >
-        #{invoiceStatus,jdbcType=TINYINT},
+      <if test="cxslStatus != null" >
+        #{cxslStatus,jdbcType=TINYINT},
       </if>
       <if test="buyerNick != null" >
         #{buyerNick,jdbcType=VARCHAR},
@@ -387,20 +387,20 @@
       <if test="sellerTaxerCode != null" >
         #{sellerTaxerCode,jdbcType=VARCHAR},
       </if>
-      <if test="invoiceAmount != null" >
-        #{invoiceAmount,jdbcType=DECIMAL},
+      <if test="cxslAmount != null" >
+        #{cxslAmount,jdbcType=DECIMAL},
       </if>
-      <if test="invoiceNum != null" >
-        #{invoiceNum,jdbcType=VARCHAR},
+      <if test="cxslNum != null" >
+        #{cxslNum,jdbcType=VARCHAR},
       </if>
-      <if test="invoiceCode != null" >
-        #{invoiceCode,jdbcType=VARCHAR},
+      <if test="cxslCode != null" >
+        #{cxslCode,jdbcType=VARCHAR},
       </if>
-      <if test="redInvoiceNum != null" >
-        #{redInvoiceNum,jdbcType=VARCHAR},
+      <if test="redcxslNum != null" >
+        #{redcxslNum,jdbcType=VARCHAR},
       </if>
-      <if test="invoiceDate != null" >
-        #{invoiceDate,jdbcType=TIMESTAMP},
+      <if test="cxslDate != null" >
+        #{cxslDate,jdbcType=TIMESTAMP},
       </if>
       <if test="pdfUrl != null" >
         #{pdfUrl,jdbcType=VARCHAR},
@@ -423,14 +423,14 @@
       <if test="isMixSplit != null" >
         #{isMixSplit,jdbcType=BIT},
       </if>
-      <if test="invoiceFlow != null" >
-        #{invoiceFlow,jdbcType=VARCHAR},
+      <if test="cxslFlow != null" >
+        #{cxslFlow,jdbcType=VARCHAR},
       </if>
-      <if test="blueInvoiceId != null" >
-        #{blueInvoiceId,jdbcType=BIGINT},
+      <if test="bluecxslId != null" >
+        #{bluecxslId,jdbcType=BIGINT},
       </if>
-      <if test="oldBlueInvoiceId != null" >
-        #{oldBlueInvoiceId,jdbcType=BIGINT},
+      <if test="oldBluecxslId != null" >
+        #{oldBluecxslId,jdbcType=BIGINT},
       </if>
       <if test="redNoticeNum != null" >
         #{redNoticeNum,jdbcType=VARCHAR},
@@ -441,8 +441,8 @@
       <if test="returnTime != null" >
         #{returnTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="invoiceRemark != null" >
-        #{invoiceRemark,jdbcType=VARCHAR},
+      <if test="cxslRemark != null" >
+        #{cxslRemark,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
@@ -494,17 +494,17 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.cxsl.trade.invoice.impl.entity.FInvoiceExample" resultType="java.lang.Integer" >
-    select count(*) from f_invoice
+  <select id="countByExample" parameterType="com.cxsl.trade.cxsl.impl.entity.FcxslExample" resultType="java.lang.Integer" >
+    select count(*) from f_cxsl
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update f_invoice
+    update f_cxsl
     <set >
-      <if test="record.invoiceId != null" >
-        invoice_id = #{record.invoiceId,jdbcType=BIGINT},
+      <if test="record.cxslId != null" >
+        cxsl_id = #{record.cxslId,jdbcType=BIGINT},
       </if>
       <if test="record.sourceType != null" >
         source_type = #{record.sourceType,jdbcType=TINYINT},
@@ -512,8 +512,8 @@
       <if test="record.causeType != null" >
         cause_type = #{record.causeType,jdbcType=TINYINT},
       </if>
-      <if test="record.invoiceType != null" >
-        invoice_type = #{record.invoiceType,jdbcType=TINYINT},
+      <if test="record.cxslType != null" >
+        cxsl_type = #{record.cxslType,jdbcType=TINYINT},
       </if>
       <if test="record.billType != null" >
         bill_type = #{record.billType,jdbcType=TINYINT},
@@ -533,11 +533,11 @@
       <if test="record.payTime != null" >
         pay_time = #{record.payTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.invoiceTitle != null" >
-        invoice_title = #{record.invoiceTitle,jdbcType=VARCHAR},
+      <if test="record.cxslTitle != null" >
+        cxsl_title = #{record.cxslTitle,jdbcType=VARCHAR},
       </if>
-      <if test="record.invoiceStatus != null" >
-        invoice_status = #{record.invoiceStatus,jdbcType=TINYINT},
+      <if test="record.cxslStatus != null" >
+        cxsl_status = #{record.cxslStatus,jdbcType=TINYINT},
       </if>
       <if test="record.buyerNick != null" >
         buyer_nick = #{record.buyerNick,jdbcType=VARCHAR},
@@ -548,20 +548,20 @@
       <if test="record.sellerTaxerCode != null" >
         seller_taxer_code = #{record.sellerTaxerCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.invoiceAmount != null" >
-        invoice_amount = #{record.invoiceAmount,jdbcType=DECIMAL},
+      <if test="record.cxslAmount != null" >
+        cxsl_amount = #{record.cxslAmount,jdbcType=DECIMAL},
       </if>
-      <if test="record.invoiceNum != null" >
-        invoice_num = #{record.invoiceNum,jdbcType=VARCHAR},
+      <if test="record.cxslNum != null" >
+        cxsl_num = #{record.cxslNum,jdbcType=VARCHAR},
       </if>
-      <if test="record.invoiceCode != null" >
-        invoice_code = #{record.invoiceCode,jdbcType=VARCHAR},
+      <if test="record.cxslCode != null" >
+        cxsl_code = #{record.cxslCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.redInvoiceNum != null" >
-        red_invoice_num = #{record.redInvoiceNum,jdbcType=VARCHAR},
+      <if test="record.redcxslNum != null" >
+        red_cxsl_num = #{record.redcxslNum,jdbcType=VARCHAR},
       </if>
-      <if test="record.invoiceDate != null" >
-        invoice_date = #{record.invoiceDate,jdbcType=TIMESTAMP},
+      <if test="record.cxslDate != null" >
+        cxsl_date = #{record.cxslDate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.pdfUrl != null" >
         pdf_url = #{record.pdfUrl,jdbcType=VARCHAR},
@@ -584,14 +584,14 @@
       <if test="record.isMixSplit != null" >
         is_mix_split = #{record.isMixSplit,jdbcType=BIT},
       </if>
-      <if test="record.invoiceFlow != null" >
-        invoice_flow = #{record.invoiceFlow,jdbcType=VARCHAR},
+      <if test="record.cxslFlow != null" >
+        cxsl_flow = #{record.cxslFlow,jdbcType=VARCHAR},
       </if>
-      <if test="record.blueInvoiceId != null" >
-        blue_invoice_id = #{record.blueInvoiceId,jdbcType=BIGINT},
+      <if test="record.bluecxslId != null" >
+        blue_cxsl_id = #{record.bluecxslId,jdbcType=BIGINT},
       </if>
-      <if test="record.oldBlueInvoiceId != null" >
-        old_blue_invoice_id = #{record.oldBlueInvoiceId,jdbcType=BIGINT},
+      <if test="record.oldBluecxslId != null" >
+        old_blue_cxsl_id = #{record.oldBluecxslId,jdbcType=BIGINT},
       </if>
       <if test="record.redNoticeNum != null" >
         red_notice_num = #{record.redNoticeNum,jdbcType=VARCHAR},
@@ -602,8 +602,8 @@
       <if test="record.returnTime != null" >
         return_time = #{record.returnTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.invoiceRemark != null" >
-        invoice_remark = #{record.invoiceRemark,jdbcType=VARCHAR},
+      <if test="record.cxslRemark != null" >
+        cxsl_remark = #{record.cxslRemark,jdbcType=VARCHAR},
       </if>
       <if test="record.remark != null" >
         remark = #{record.remark,jdbcType=VARCHAR},
@@ -659,27 +659,27 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update f_invoice
-    set invoice_id = #{record.invoiceId,jdbcType=BIGINT},
+    update f_cxsl
+    set cxsl_id = #{record.cxslId,jdbcType=BIGINT},
       source_type = #{record.sourceType,jdbcType=TINYINT},
       cause_type = #{record.causeType,jdbcType=TINYINT},
-      invoice_type = #{record.invoiceType,jdbcType=TINYINT},
+      cxsl_type = #{record.cxslType,jdbcType=TINYINT},
       bill_type = #{record.billType,jdbcType=TINYINT},
       outer_order_id = #{record.outerOrderId,jdbcType=VARCHAR},
       order_id = #{record.orderId,jdbcType=BIGINT},
       shop_id = #{record.shopId,jdbcType=INTEGER},
       platform_id = #{record.platformId,jdbcType=TINYINT},
       pay_time = #{record.payTime,jdbcType=TIMESTAMP},
-      invoice_title = #{record.invoiceTitle,jdbcType=VARCHAR},
-      invoice_status = #{record.invoiceStatus,jdbcType=TINYINT},
+      cxsl_title = #{record.cxslTitle,jdbcType=VARCHAR},
+      cxsl_status = #{record.cxslStatus,jdbcType=TINYINT},
       buyer_nick = #{record.buyerNick,jdbcType=VARCHAR},
       seller_taxer_name = #{record.sellerTaxerName,jdbcType=VARCHAR},
       seller_taxer_code = #{record.sellerTaxerCode,jdbcType=VARCHAR},
-      invoice_amount = #{record.invoiceAmount,jdbcType=DECIMAL},
-      invoice_num = #{record.invoiceNum,jdbcType=VARCHAR},
-      invoice_code = #{record.invoiceCode,jdbcType=VARCHAR},
-      red_invoice_num = #{record.redInvoiceNum,jdbcType=VARCHAR},
-      invoice_date = #{record.invoiceDate,jdbcType=TIMESTAMP},
+      cxsl_amount = #{record.cxslAmount,jdbcType=DECIMAL},
+      cxsl_num = #{record.cxslNum,jdbcType=VARCHAR},
+      cxsl_code = #{record.cxslCode,jdbcType=VARCHAR},
+      red_cxsl_num = #{record.redcxslNum,jdbcType=VARCHAR},
+      cxsl_date = #{record.cxslDate,jdbcType=TIMESTAMP},
       pdf_url = #{record.pdfUrl,jdbcType=VARCHAR},
       pic_url = #{record.picUrl,jdbcType=VARCHAR},
       is_urgent = #{record.isUrgent,jdbcType=BIT},
@@ -687,13 +687,13 @@
       sms_type = #{record.smsType,jdbcType=TINYINT},
       sms_notice_status = #{record.smsNoticeStatus,jdbcType=TINYINT},
       is_mix_split = #{record.isMixSplit,jdbcType=BIT},
-      invoice_flow = #{record.invoiceFlow,jdbcType=VARCHAR},
-      blue_invoice_id = #{record.blueInvoiceId,jdbcType=BIGINT},
-      old_blue_invoice_id = #{record.oldBlueInvoiceId,jdbcType=BIGINT},
+      cxsl_flow = #{record.cxslFlow,jdbcType=VARCHAR},
+      blue_cxsl_id = #{record.bluecxslId,jdbcType=BIGINT},
+      old_blue_cxsl_id = #{record.oldBluecxslId,jdbcType=BIGINT},
       red_notice_num = #{record.redNoticeNum,jdbcType=VARCHAR},
       down_time = #{record.downTime,jdbcType=TIMESTAMP},
       return_time = #{record.returnTime,jdbcType=TIMESTAMP},
-      invoice_remark = #{record.invoiceRemark,jdbcType=VARCHAR},
+      cxsl_remark = #{record.cxslRemark,jdbcType=VARCHAR},
       remark = #{record.remark,jdbcType=VARCHAR},
       reject_reason = #{record.rejectReason,jdbcType=TINYINT},
       reject_desc = #{record.rejectDesc,jdbcType=VARCHAR},
@@ -714,8 +714,8 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cxsl.trade.invoice.impl.entity.FInvoice" >
-    update f_invoice
+  <update id="updateByPrimaryKeySelective" parameterType="com.cxsl.trade.cxsl.impl.entity.Fcxsl" >
+    update f_cxsl
     <set >
       <if test="sourceType != null" >
         source_type = #{sourceType,jdbcType=TINYINT},
@@ -723,8 +723,8 @@
       <if test="causeType != null" >
         cause_type = #{causeType,jdbcType=TINYINT},
       </if>
-      <if test="invoiceType != null" >
-        invoice_type = #{invoiceType,jdbcType=TINYINT},
+      <if test="cxslType != null" >
+        cxsl_type = #{cxslType,jdbcType=TINYINT},
       </if>
       <if test="billType != null" >
         bill_type = #{billType,jdbcType=TINYINT},
@@ -744,11 +744,11 @@
       <if test="payTime != null" >
         pay_time = #{payTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="invoiceTitle != null" >
-        invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      <if test="cxslTitle != null" >
+        cxsl_title = #{cxslTitle,jdbcType=VARCHAR},
       </if>
-      <if test="invoiceStatus != null" >
-        invoice_status = #{invoiceStatus,jdbcType=TINYINT},
+      <if test="cxslStatus != null" >
+        cxsl_status = #{cxslStatus,jdbcType=TINYINT},
       </if>
       <if test="buyerNick != null" >
         buyer_nick = #{buyerNick,jdbcType=VARCHAR},
@@ -759,20 +759,20 @@
       <if test="sellerTaxerCode != null" >
         seller_taxer_code = #{sellerTaxerCode,jdbcType=VARCHAR},
       </if>
-      <if test="invoiceAmount != null" >
-        invoice_amount = #{invoiceAmount,jdbcType=DECIMAL},
+      <if test="cxslAmount != null" >
+        cxsl_amount = #{cxslAmount,jdbcType=DECIMAL},
       </if>
-      <if test="invoiceNum != null" >
-        invoice_num = #{invoiceNum,jdbcType=VARCHAR},
+      <if test="cxslNum != null" >
+        cxsl_num = #{cxslNum,jdbcType=VARCHAR},
       </if>
-      <if test="invoiceCode != null" >
-        invoice_code = #{invoiceCode,jdbcType=VARCHAR},
+      <if test="cxslCode != null" >
+        cxsl_code = #{cxslCode,jdbcType=VARCHAR},
       </if>
-      <if test="redInvoiceNum != null" >
-        red_invoice_num = #{redInvoiceNum,jdbcType=VARCHAR},
+      <if test="redcxslNum != null" >
+        red_cxsl_num = #{redcxslNum,jdbcType=VARCHAR},
       </if>
-      <if test="invoiceDate != null" >
-        invoice_date = #{invoiceDate,jdbcType=TIMESTAMP},
+      <if test="cxslDate != null" >
+        cxsl_date = #{cxslDate,jdbcType=TIMESTAMP},
       </if>
       <if test="pdfUrl != null" >
         pdf_url = #{pdfUrl,jdbcType=VARCHAR},
@@ -795,14 +795,14 @@
       <if test="isMixSplit != null" >
         is_mix_split = #{isMixSplit,jdbcType=BIT},
       </if>
-      <if test="invoiceFlow != null" >
-        invoice_flow = #{invoiceFlow,jdbcType=VARCHAR},
+      <if test="cxslFlow != null" >
+        cxsl_flow = #{cxslFlow,jdbcType=VARCHAR},
       </if>
-      <if test="blueInvoiceId != null" >
-        blue_invoice_id = #{blueInvoiceId,jdbcType=BIGINT},
+      <if test="bluecxslId != null" >
+        blue_cxsl_id = #{bluecxslId,jdbcType=BIGINT},
       </if>
-      <if test="oldBlueInvoiceId != null" >
-        old_blue_invoice_id = #{oldBlueInvoiceId,jdbcType=BIGINT},
+      <if test="oldBluecxslId != null" >
+        old_blue_cxsl_id = #{oldBluecxslId,jdbcType=BIGINT},
       </if>
       <if test="redNoticeNum != null" >
         red_notice_num = #{redNoticeNum,jdbcType=VARCHAR},
@@ -813,8 +813,8 @@
       <if test="returnTime != null" >
         return_time = #{returnTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="invoiceRemark != null" >
-        invoice_remark = #{invoiceRemark,jdbcType=VARCHAR},
+      <if test="cxslRemark != null" >
+        cxsl_remark = #{cxslRemark,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
@@ -865,29 +865,29 @@
         check_code = #{checkCode,jdbcType=VARCHAR},
       </if>
     </set>
-    where invoice_id = #{invoiceId,jdbcType=BIGINT}
+    where cxsl_id = #{cxslId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cxsl.trade.invoice.impl.entity.FInvoice" >
-    update f_invoice
+  <update id="updateByPrimaryKey" parameterType="com.cxsl.trade.cxsl.impl.entity.Fcxsl" >
+    update f_cxsl
     set source_type = #{sourceType,jdbcType=TINYINT},
       cause_type = #{causeType,jdbcType=TINYINT},
-      invoice_type = #{invoiceType,jdbcType=TINYINT},
+      cxsl_type = #{cxslType,jdbcType=TINYINT},
       bill_type = #{billType,jdbcType=TINYINT},
       outer_order_id = #{outerOrderId,jdbcType=VARCHAR},
       order_id = #{orderId,jdbcType=BIGINT},
       shop_id = #{shopId,jdbcType=INTEGER},
       platform_id = #{platformId,jdbcType=TINYINT},
       pay_time = #{payTime,jdbcType=TIMESTAMP},
-      invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
-      invoice_status = #{invoiceStatus,jdbcType=TINYINT},
+      cxsl_title = #{cxslTitle,jdbcType=VARCHAR},
+      cxsl_status = #{cxslStatus,jdbcType=TINYINT},
       buyer_nick = #{buyerNick,jdbcType=VARCHAR},
       seller_taxer_name = #{sellerTaxerName,jdbcType=VARCHAR},
       seller_taxer_code = #{sellerTaxerCode,jdbcType=VARCHAR},
-      invoice_amount = #{invoiceAmount,jdbcType=DECIMAL},
-      invoice_num = #{invoiceNum,jdbcType=VARCHAR},
-      invoice_code = #{invoiceCode,jdbcType=VARCHAR},
-      red_invoice_num = #{redInvoiceNum,jdbcType=VARCHAR},
-      invoice_date = #{invoiceDate,jdbcType=TIMESTAMP},
+      cxsl_amount = #{cxslAmount,jdbcType=DECIMAL},
+      cxsl_num = #{cxslNum,jdbcType=VARCHAR},
+      cxsl_code = #{cxslCode,jdbcType=VARCHAR},
+      red_cxsl_num = #{redcxslNum,jdbcType=VARCHAR},
+      cxsl_date = #{cxslDate,jdbcType=TIMESTAMP},
       pdf_url = #{pdfUrl,jdbcType=VARCHAR},
       pic_url = #{picUrl,jdbcType=VARCHAR},
       is_urgent = #{isUrgent,jdbcType=BIT},
@@ -895,13 +895,13 @@
       sms_type = #{smsType,jdbcType=TINYINT},
       sms_notice_status = #{smsNoticeStatus,jdbcType=TINYINT},
       is_mix_split = #{isMixSplit,jdbcType=BIT},
-      invoice_flow = #{invoiceFlow,jdbcType=VARCHAR},
-      blue_invoice_id = #{blueInvoiceId,jdbcType=BIGINT},
-      old_blue_invoice_id = #{oldBlueInvoiceId,jdbcType=BIGINT},
+      cxsl_flow = #{cxslFlow,jdbcType=VARCHAR},
+      blue_cxsl_id = #{bluecxslId,jdbcType=BIGINT},
+      old_blue_cxsl_id = #{oldBluecxslId,jdbcType=BIGINT},
       red_notice_num = #{redNoticeNum,jdbcType=VARCHAR},
       down_time = #{downTime,jdbcType=TIMESTAMP},
       return_time = #{returnTime,jdbcType=TIMESTAMP},
-      invoice_remark = #{invoiceRemark,jdbcType=VARCHAR},
+      cxsl_remark = #{cxslRemark,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
       reject_reason = #{rejectReason,jdbcType=TINYINT},
       reject_desc = #{rejectDesc,jdbcType=VARCHAR},
@@ -918,6 +918,6 @@
       gl_date = #{glDate,jdbcType=TIMESTAMP},
       ims_customer_code = #{imsCustomerCode,jdbcType=VARCHAR},
       check_code = #{checkCode,jdbcType=VARCHAR}
-    where invoice_id = #{invoiceId,jdbcType=BIGINT}
+    where cxsl_id = #{cxslId,jdbcType=BIGINT}
   </update>
 </mapper>

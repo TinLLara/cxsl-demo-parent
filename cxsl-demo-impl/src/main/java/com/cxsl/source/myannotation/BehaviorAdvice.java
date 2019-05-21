@@ -1,11 +1,16 @@
 package com.cxsl.source.myannotation;
 
+import java.lang.reflect.Method;
+
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
-
-import java.lang.reflect.Method;
 
 @Component
 @Aspect
@@ -54,7 +59,7 @@ public class BehaviorAdvice {
         //获得自定义注解的参数
         System.out.println("After method benzAfterSale 的参数，remark：" + benzAfterSale.behavior());
         BenzAfterSale remark = getMethodRemark(joinPoint);
-        System.out.println("After method end.......................");
+        System.out.println("After method end......................." + remark);
     }
 
     /**
@@ -91,7 +96,6 @@ public class BehaviorAdvice {
 
         Class targetClass = Class.forName(targetName);
         Method[] method = targetClass.getMethods();
-        //这个怎么这么low呢。
         for (Method m : method) {
             if (m.getName().equals(methodName)) {
                 Class[] tmpCs = m.getParameterTypes();

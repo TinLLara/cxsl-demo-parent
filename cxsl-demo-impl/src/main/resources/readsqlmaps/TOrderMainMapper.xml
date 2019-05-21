@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.trade.invoice.impl.dao.TOrderMainMapper" >
-  <resultMap id="BaseResultMap" type="com.cxsl.trade.invoice.impl.entity.TOrderMain" >
+<mapper namespace="com.trade.cxsl.impl.dao.TOrderMainMapper" >
+  <resultMap id="BaseResultMap" type="com.cxsl.trade.cxsl.impl.entity.TOrderMain" >
     <id column="order_id" property="orderId" jdbcType="BIGINT" />
     <result column="platform_id" property="platformId" jdbcType="TINYINT" />
     <result column="shop_id" property="shopId" jdbcType="INTEGER" />
@@ -23,8 +23,8 @@
     <result column="order_status" property="orderStatus" jdbcType="TINYINT" />
     <result column="order_flag" property="orderFlag" jdbcType="VARCHAR" />
     <result column="refund_status" property="refundStatus" jdbcType="TINYINT" />
-    <result column="is_invoice" property="isInvoice" jdbcType="BIT" />
-    <result column="invoice_code" property="invoiceCode" jdbcType="VARCHAR" />
+    <result column="is_cxsl" property="iscxsl" jdbcType="BIT" />
+    <result column="cxsl_code" property="cxslCode" jdbcType="VARCHAR" />
     <result column="logistics_com_code" property="logisticsComCode" jdbcType="VARCHAR" />
     <result column="logistics_no" property="logisticsNo" jdbcType="VARCHAR" />
     <result column="outer_create_time" property="outerCreateTime" jdbcType="TIMESTAMP" />
@@ -105,12 +105,12 @@
     order_id, platform_id, shop_id, outer_order_id, order_type, pay_code, total_amount, 
     item_amount, delivery_fee, discount_amount, adjust_amount, payment_amount, buyer_payment_amount, 
     other_amount, trade_from, pay_time, pay_order_no, sale_type, order_status, order_flag, 
-    refund_status, is_invoice, invoice_code, logistics_com_code, logistics_no, outer_create_time, 
+    refund_status, is_cxsl, cxsl_code, logistics_com_code, logistics_no, outer_create_time,
     seller_memo, buyer_memo, store_id, remain_time, allocated_time, shiped_time, buyer_nick, 
     received_time, approve_time, cancel_time, parent_order_id, create_time, update_time, 
     approve_mip
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cxsl.trade.invoice.impl.entity.TOrderMainExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMainExample" >
     select
     <if test="distinct" >
       distinct
@@ -134,13 +134,13 @@
     delete from t_order_main
     where order_id = #{orderId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.cxsl.trade.invoice.impl.entity.TOrderMainExample" >
+  <delete id="deleteByExample" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMainExample" >
     delete from t_order_main
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.cxsl.trade.invoice.impl.entity.TOrderMain" >
+  <insert id="insert" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMain" >
     insert into t_order_main (order_id, platform_id, shop_id, 
       outer_order_id, order_type, pay_code, 
       total_amount, item_amount, delivery_fee, 
@@ -148,7 +148,7 @@
       buyer_payment_amount, other_amount, trade_from, 
       pay_time, pay_order_no, sale_type, 
       order_status, order_flag, refund_status, 
-      is_invoice, invoice_code, logistics_com_code, 
+      is_cxsl, cxsl_code, logistics_com_code,
       logistics_no, outer_create_time, seller_memo, 
       buyer_memo, store_id, remain_time, 
       allocated_time, shiped_time, buyer_nick, 
@@ -162,7 +162,7 @@
       #{buyerPaymentAmount,jdbcType=DECIMAL}, #{otherAmount,jdbcType=DECIMAL}, #{tradeFrom,jdbcType=VARCHAR}, 
       #{payTime,jdbcType=TIMESTAMP}, #{payOrderNo,jdbcType=VARCHAR}, #{saleType,jdbcType=TINYINT}, 
       #{orderStatus,jdbcType=TINYINT}, #{orderFlag,jdbcType=VARCHAR}, #{refundStatus,jdbcType=TINYINT}, 
-      #{isInvoice,jdbcType=BIT}, #{invoiceCode,jdbcType=VARCHAR}, #{logisticsComCode,jdbcType=VARCHAR}, 
+      #{iscxsl,jdbcType=BIT}, #{cxslCode,jdbcType=VARCHAR}, #{logisticsComCode,jdbcType=VARCHAR},
       #{logisticsNo,jdbcType=VARCHAR}, #{outerCreateTime,jdbcType=TIMESTAMP}, #{sellerMemo,jdbcType=VARCHAR}, 
       #{buyerMemo,jdbcType=VARCHAR}, #{storeId,jdbcType=INTEGER}, #{remainTime,jdbcType=TIMESTAMP}, 
       #{allocatedTime,jdbcType=TIMESTAMP}, #{shipedTime,jdbcType=TIMESTAMP}, #{buyerNick,jdbcType=VARCHAR}, 
@@ -170,7 +170,7 @@
       #{parentOrderId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{approveMip,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cxsl.trade.invoice.impl.entity.TOrderMain" >
+  <insert id="insertSelective" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMain" >
     insert into t_order_main
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="orderId != null" >
@@ -236,11 +236,11 @@
       <if test="refundStatus != null" >
         refund_status,
       </if>
-      <if test="isInvoice != null" >
-        is_invoice,
+      <if test="iscxsl != null" >
+        is_cxsl,
       </if>
-      <if test="invoiceCode != null" >
-        invoice_code,
+      <if test="cxslCode != null" >
+        cxsl_code,
       </if>
       <if test="logisticsComCode != null" >
         logistics_com_code,
@@ -358,11 +358,11 @@
       <if test="refundStatus != null" >
         #{refundStatus,jdbcType=TINYINT},
       </if>
-      <if test="isInvoice != null" >
-        #{isInvoice,jdbcType=BIT},
+      <if test="iscxsl != null" >
+        #{iscxsl,jdbcType=BIT},
       </if>
-      <if test="invoiceCode != null" >
-        #{invoiceCode,jdbcType=VARCHAR},
+      <if test="cxslCode != null" >
+        #{cxslCode,jdbcType=VARCHAR},
       </if>
       <if test="logisticsComCode != null" >
         #{logisticsComCode,jdbcType=VARCHAR},
@@ -417,7 +417,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.cxsl.trade.invoice.impl.entity.TOrderMainExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMainExample" resultType="java.lang.Integer" >
     select count(*) from t_order_main
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -489,11 +489,11 @@
       <if test="record.refundStatus != null" >
         refund_status = #{record.refundStatus,jdbcType=TINYINT},
       </if>
-      <if test="record.isInvoice != null" >
-        is_invoice = #{record.isInvoice,jdbcType=BIT},
+      <if test="record.iscxsl != null" >
+        is_cxsl = #{record.iscxsl,jdbcType=BIT},
       </if>
-      <if test="record.invoiceCode != null" >
-        invoice_code = #{record.invoiceCode,jdbcType=VARCHAR},
+      <if test="record.cxslCode != null" >
+        cxsl_code = #{record.cxslCode,jdbcType=VARCHAR},
       </if>
       <if test="record.logisticsComCode != null" >
         logistics_com_code = #{record.logisticsComCode,jdbcType=VARCHAR},
@@ -574,8 +574,8 @@
       order_status = #{record.orderStatus,jdbcType=TINYINT},
       order_flag = #{record.orderFlag,jdbcType=VARCHAR},
       refund_status = #{record.refundStatus,jdbcType=TINYINT},
-      is_invoice = #{record.isInvoice,jdbcType=BIT},
-      invoice_code = #{record.invoiceCode,jdbcType=VARCHAR},
+      is_cxsl = #{record.iscxsl,jdbcType=BIT},
+      cxsl_code = #{record.cxslCode,jdbcType=VARCHAR},
       logistics_com_code = #{record.logisticsComCode,jdbcType=VARCHAR},
       logistics_no = #{record.logisticsNo,jdbcType=VARCHAR},
       outer_create_time = #{record.outerCreateTime,jdbcType=TIMESTAMP},
@@ -597,7 +597,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cxsl.trade.invoice.impl.entity.TOrderMain" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMain" >
     update t_order_main
     <set >
       <if test="platformId != null" >
@@ -660,11 +660,11 @@
       <if test="refundStatus != null" >
         refund_status = #{refundStatus,jdbcType=TINYINT},
       </if>
-      <if test="isInvoice != null" >
-        is_invoice = #{isInvoice,jdbcType=BIT},
+      <if test="iscxsl != null" >
+        is_cxsl = #{iscxsl,jdbcType=BIT},
       </if>
-      <if test="invoiceCode != null" >
-        invoice_code = #{invoiceCode,jdbcType=VARCHAR},
+      <if test="cxslCode != null" >
+        cxsl_code = #{cxslCode,jdbcType=VARCHAR},
       </if>
       <if test="logisticsComCode != null" >
         logistics_com_code = #{logisticsComCode,jdbcType=VARCHAR},
@@ -720,7 +720,7 @@
     </set>
     where order_id = #{orderId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cxsl.trade.invoice.impl.entity.TOrderMain" >
+  <update id="updateByPrimaryKey" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMain" >
     update t_order_main
     set platform_id = #{platformId,jdbcType=TINYINT},
       shop_id = #{shopId,jdbcType=INTEGER},
@@ -742,8 +742,8 @@
       order_status = #{orderStatus,jdbcType=TINYINT},
       order_flag = #{orderFlag,jdbcType=VARCHAR},
       refund_status = #{refundStatus,jdbcType=TINYINT},
-      is_invoice = #{isInvoice,jdbcType=BIT},
-      invoice_code = #{invoiceCode,jdbcType=VARCHAR},
+      is_cxsl = #{iscxsl,jdbcType=BIT},
+      cxsl_code = #{cxslCode,jdbcType=VARCHAR},
       logistics_com_code = #{logisticsComCode,jdbcType=VARCHAR},
       logistics_no = #{logisticsNo,jdbcType=VARCHAR},
       outer_create_time = #{outerCreateTime,jdbcType=TIMESTAMP},

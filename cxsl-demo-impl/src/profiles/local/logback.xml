@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-    <!-- <property name="app.tomcat.context" value="littleswan" />
+    <!-- <property name="app.tomcat.context" value="sz" />
     <property file="${catalina.base}/webapps/${app.tomcat.context}/WEB-INF/classes/conf/logback.properties" /> 
-	<property scope="context" name="moduleName" value="littleswan" />
+	<property scope="context" name="moduleName" value="sz" />
 	<property scope="context" name="reportMqAddr" value="${reportMqAddr}" />-->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
     	<!-- <Filter class="com.cxsl.trade.fr.logback.filter.FaultReportFilter" /> -->
@@ -61,7 +61,7 @@
 		<appender-ref ref="console"/>
 </logger>
     
- <logger name="com.cxsl.littleswan.mall.impl" level="DEBUG"/>
+ <logger name="com.cxsl.sz.mall.impl" level="DEBUG"/>
  <logger name="org.apache.zookeeper" level="INFO" addtivity="false"/>
  <logger name="o.a.z.client" level="INFO" addtivity="false"/>
  <logger name="monitor">

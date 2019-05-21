@@ -10,13 +10,13 @@
     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
     
 	
-	<bean id="defaultMQProducer" class="com.alibaba.rocketmq.client.producer.DefaultMQProducer" scope="singleton" destroy-method="shutdown">
+	<!--<bean id="defaultMQProducer" class="com.alibaba.rocketmq.client.producer.DefaultMQProducer" scope="singleton" destroy-method="shutdown">
 		<constructor-arg index="0"> 
 	     	<value>${rocketmq.producerGroupName}</value> 
 	    </constructor-arg> 
         <property name="namesrvAddr" value="${rocketmq.namesrvAddr}" />
         <property name="instanceName" value="${rocketmq.producer.instanceName}" /> 
-    </bean>
+    </bean>-->
        
 
 </beans>
