@@ -9,7 +9,7 @@
   		
 
                      
-    <!--<dubbo:reference id="tradeFacade"
-			interface="com.trade.gateway.api.service.TradeFacade" />-->
+    <!--<dubbo:reference id="szFacade"
+			interface="com.sz.gateway.api.service.szFacade" />-->
 			
 	</beans>

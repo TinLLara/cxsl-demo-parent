@@ -13,14 +13,14 @@
 		<property name="dataSource" ref="coreDataSource" />
 		<property name="configLocation" value="classpath:/spring-config/mybatis-configuration.xml" />
 		&lt;!&ndash; 自动扫描entity目录 &ndash;&gt;
-		<property name="typeAliasesPackage" value="com.cxsl.trade.cxsl.impl.entity" />
+		<property name="typeAliasesPackage" value="com.cxsl.sz.cxsl.impl.entity" />
 		&lt;!&ndash; 显式指定Mapper文件位置 &ndash;&gt;
 		<property name="mapperLocations" value="classpath:/sqlmaps/**/*Mapper.xml" />
 	</bean>
 	&lt;!&ndash; 扫描basePackage下所有以@IRepository标识的 接口 &ndash;&gt;
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="coreSqlSessionFactory"></property>
-		<property name="basePackage" value="com.cxsl.trade.cxsl.impl.dao" />
+		<property name="basePackage" value="com.cxsl.sz.cxsl.impl.dao" />
 		<property name="annotationClass"
 			value="com.cxsl.source.annotation.IRepository" />
 	</bean>
@@ -30,14 +30,14 @@
 		<property name="dataSource" ref="tcSlaveReadDataSource" />
 		<property name="configLocation" value="classpath:/spring-config/mybatis-configuration.xml" />
 		&lt;!&ndash; 自动扫描entity目录 &ndash;&gt;
-		<property name="typeAliasesPackage" value="com.cxsl.trade.cxsl.impl.entity" />
+		<property name="typeAliasesPackage" value="com.cxsl.sz.cxsl.impl.entity" />
 		&lt;!&ndash; 显式指定Mapper文件位置 &ndash;&gt;
 		<property name="mapperLocations" value="classpath:/readsqlmaps/**/*Mapper.xml" />
 	</bean> 
 	
 	<bean id="tcSlaveReadMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="tcSlaveReadSqlSessionFactory"></property>
-		<property name="basePackage" value="com.cxsl.trade.cxsl.impl.dao.read" />
+		<property name="basePackage" value="com.cxsl.sz.cxsl.impl.dao.read" />
 		<property name="annotationClass" value="com.cxsl.source.annotation.RRepository"/>
 	</bean>
 	&lt;!&ndash;tc 主库配置 &ndash;&gt;
@@ -45,14 +45,14 @@
 		<property name="dataSource" ref="tcMasterReadDataSource" />
 		<property name="configLocation" value="classpath:/spring-config/mybatis-configuration.xml" />
 		&lt;!&ndash; 自动扫描entity目录 &ndash;&gt;
-		<property name="typeAliasesPackage" value="com.cxsl.trade.cxsl.impl.entity" />
+		<property name="typeAliasesPackage" value="com.cxsl.sz.cxsl.impl.entity" />
 		&lt;!&ndash; 显式指定Mapper文件位置 &ndash;&gt;
 		<property name="mapperLocations" value="classpath:/readsqlmaps/**/*Mapper.xml" />
 	</bean> 
 	
 	<bean id="tcMasterReadMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="tcMasterReadSqlSessionFactory"></property>
-		<property name="basePackage" value="com.cxsl.trade.cxsl.impl.dao.read.master" />
+		<property name="basePackage" value="com.cxsl.sz.cxsl.impl.dao.read.master" />
 		<property name="annotationClass" value="com.cxsl.source.annotation.MRepository"/>
 	</bean>-->
 	

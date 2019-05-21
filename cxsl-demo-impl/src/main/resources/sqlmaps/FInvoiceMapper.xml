@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.cxsl.trade.cxsl.impl.dao.FcxslMapper" >
-  <resultMap id="BaseResultMap" type="com.cxsl.trade.cxsl.impl.entity.Fcxsl" >
+<mapper namespace="com.cxsl.sz.cxsl.impl.dao.FcxslMapper" >
+  <resultMap id="BaseResultMap" type="com.cxsl.sz.cxsl.impl.entity.Fcxsl" >
     <id column="cxsl_id" property="cxslId" jdbcType="BIGINT" />
     <result column="source_type" property="sourceType" jdbcType="TINYINT" />
     <result column="cause_type" property="causeType" jdbcType="TINYINT" />
@@ -121,7 +121,7 @@
     is_pre_reopen, is_ad, is_apply_writeoff, is_writeoff_result, err_msg, create_time, 
     update_time, gl_date, ims_customer_code, check_code
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cxsl.trade.cxsl.impl.entity.FcxslExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cxsl.sz.cxsl.impl.entity.FcxslExample" >
     select
     <if test="distinct" >
       distinct
@@ -145,13 +145,13 @@
     delete from f_cxsl
     where cxsl_id = #{cxslId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.cxsl.trade.cxsl.impl.entity.FcxslExample" >
+  <delete id="deleteByExample" parameterType="com.cxsl.sz.cxsl.impl.entity.FcxslExample" >
     delete from f_cxsl
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.cxsl.trade.cxsl.impl.entity.Fcxsl" >
+  <insert id="insert" parameterType="com.cxsl.sz.cxsl.impl.entity.Fcxsl" >
     insert into f_cxsl (cxsl_id, source_type, cause_type,
       cxsl_type, bill_type, outer_order_id,
       order_id, shop_id, platform_id, 
@@ -187,7 +187,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{glDate,jdbcType=TIMESTAMP}, #{imsCustomerCode,jdbcType=VARCHAR}, 
       #{checkCode,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cxsl.trade.cxsl.impl.entity.Fcxsl" >
+  <insert id="insertSelective" parameterType="com.cxsl.sz.cxsl.impl.entity.Fcxsl" >
     insert into f_cxsl
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="cxslId != null" >
@@ -494,7 +494,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.cxsl.trade.cxsl.impl.entity.FcxslExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.cxsl.sz.cxsl.impl.entity.FcxslExample" resultType="java.lang.Integer" >
     select count(*) from f_cxsl
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -714,7 +714,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cxsl.trade.cxsl.impl.entity.Fcxsl" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cxsl.sz.cxsl.impl.entity.Fcxsl" >
     update f_cxsl
     <set >
       <if test="sourceType != null" >
@@ -867,7 +867,7 @@
     </set>
     where cxsl_id = #{cxslId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cxsl.trade.cxsl.impl.entity.Fcxsl" >
+  <update id="updateByPrimaryKey" parameterType="com.cxsl.sz.cxsl.impl.entity.Fcxsl" >
     update f_cxsl
     set source_type = #{sourceType,jdbcType=TINYINT},
       cause_type = #{causeType,jdbcType=TINYINT},

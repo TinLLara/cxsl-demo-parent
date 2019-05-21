@@ -23,7 +23,7 @@
         </property>
 		<property name="serviceUrl" value="${manage.shopService.url}"/>
 		<property name="serviceInterface">
-			<value>com.cxsl.trade.manage.api.service.ShopFacade</value>
+			<value>com.cxsl.sz.manage.api.service.ShopFacade</value>
 		</property>
 	</bean>
 	
@@ -42,7 +42,7 @@
 		<property name="serviceUrl" value="${email.hessian.url}"/>
 		&lt;!&ndash; 接口定义 &ndash;&gt;
 		<property name="serviceInterface">
-			<value>com.trade.dmz.api.rpc.hessian.ICommonServiceHessian</value>
+			<value>com.sz.dmz.api.rpc.hessian.ICommonServiceHessian</value>
 		</property>
 	</bean>-->
 

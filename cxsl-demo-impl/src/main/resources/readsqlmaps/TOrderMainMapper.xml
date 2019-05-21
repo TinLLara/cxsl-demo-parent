@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.trade.cxsl.impl.dao.TOrderMainMapper" >
-  <resultMap id="BaseResultMap" type="com.cxsl.trade.cxsl.impl.entity.TOrderMain" >
+<mapper namespace="com.sz.cxsl.impl.dao.TOrderMainMapper" >
+  <resultMap id="BaseResultMap" type="com.cxsl.sz.cxsl.impl.entity.TOrderMain" >
     <id column="order_id" property="orderId" jdbcType="BIGINT" />
     <result column="platform_id" property="platformId" jdbcType="TINYINT" />
     <result column="shop_id" property="shopId" jdbcType="INTEGER" />
@@ -16,7 +16,7 @@
     <result column="payment_amount" property="paymentAmount" jdbcType="DECIMAL" />
     <result column="buyer_payment_amount" property="buyerPaymentAmount" jdbcType="DECIMAL" />
     <result column="other_amount" property="otherAmount" jdbcType="DECIMAL" />
-    <result column="trade_from" property="tradeFrom" jdbcType="VARCHAR" />
+    <result column="sz_from" property="szFrom" jdbcType="VARCHAR" />
     <result column="pay_time" property="payTime" jdbcType="TIMESTAMP" />
     <result column="pay_order_no" property="payOrderNo" jdbcType="VARCHAR" />
     <result column="sale_type" property="saleType" jdbcType="TINYINT" />
@@ -104,13 +104,13 @@
   <sql id="Base_Column_List" >
     order_id, platform_id, shop_id, outer_order_id, order_type, pay_code, total_amount, 
     item_amount, delivery_fee, discount_amount, adjust_amount, payment_amount, buyer_payment_amount, 
-    other_amount, trade_from, pay_time, pay_order_no, sale_type, order_status, order_flag, 
+    other_amount, sz_from, pay_time, pay_order_no, sale_type, order_status, order_flag,
     refund_status, is_cxsl, cxsl_code, logistics_com_code, logistics_no, outer_create_time,
     seller_memo, buyer_memo, store_id, remain_time, allocated_time, shiped_time, buyer_nick, 
     received_time, approve_time, cancel_time, parent_order_id, create_time, update_time, 
     approve_mip
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMainExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.cxsl.sz.cxsl.impl.entity.TOrderMainExample" >
     select
     <if test="distinct" >
       distinct
@@ -134,18 +134,18 @@
     delete from t_order_main
     where order_id = #{orderId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMainExample" >
+  <delete id="deleteByExample" parameterType="com.cxsl.sz.cxsl.impl.entity.TOrderMainExample" >
     delete from t_order_main
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMain" >
+  <insert id="insert" parameterType="com.cxsl.sz.cxsl.impl.entity.TOrderMain" >
     insert into t_order_main (order_id, platform_id, shop_id, 
       outer_order_id, order_type, pay_code, 
       total_amount, item_amount, delivery_fee, 
       discount_amount, adjust_amount, payment_amount, 
-      buyer_payment_amount, other_amount, trade_from, 
+      buyer_payment_amount, other_amount, sz_from,
       pay_time, pay_order_no, sale_type, 
       order_status, order_flag, refund_status, 
       is_cxsl, cxsl_code, logistics_com_code,
@@ -159,7 +159,7 @@
       #{outerOrderId,jdbcType=VARCHAR}, #{orderType,jdbcType=TINYINT}, #{payCode,jdbcType=TINYINT}, 
       #{totalAmount,jdbcType=DECIMAL}, #{itemAmount,jdbcType=DECIMAL}, #{deliveryFee,jdbcType=DECIMAL}, 
       #{discountAmount,jdbcType=DECIMAL}, #{adjustAmount,jdbcType=DECIMAL}, #{paymentAmount,jdbcType=DECIMAL}, 
-      #{buyerPaymentAmount,jdbcType=DECIMAL}, #{otherAmount,jdbcType=DECIMAL}, #{tradeFrom,jdbcType=VARCHAR}, 
+      #{buyerPaymentAmount,jdbcType=DECIMAL}, #{otherAmount,jdbcType=DECIMAL}, #{szFrom,jdbcType=VARCHAR},
       #{payTime,jdbcType=TIMESTAMP}, #{payOrderNo,jdbcType=VARCHAR}, #{saleType,jdbcType=TINYINT}, 
       #{orderStatus,jdbcType=TINYINT}, #{orderFlag,jdbcType=VARCHAR}, #{refundStatus,jdbcType=TINYINT}, 
       #{iscxsl,jdbcType=BIT}, #{cxslCode,jdbcType=VARCHAR}, #{logisticsComCode,jdbcType=VARCHAR},
@@ -170,7 +170,7 @@
       #{parentOrderId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{approveMip,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMain" >
+  <insert id="insertSelective" parameterType="com.cxsl.sz.cxsl.impl.entity.TOrderMain" >
     insert into t_order_main
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="orderId != null" >
@@ -215,8 +215,8 @@
       <if test="otherAmount != null" >
         other_amount,
       </if>
-      <if test="tradeFrom != null" >
-        trade_from,
+      <if test="szFrom != null" >
+        sz_from,
       </if>
       <if test="payTime != null" >
         pay_time,
@@ -337,8 +337,8 @@
       <if test="otherAmount != null" >
         #{otherAmount,jdbcType=DECIMAL},
       </if>
-      <if test="tradeFrom != null" >
-        #{tradeFrom,jdbcType=VARCHAR},
+      <if test="szFrom != null" >
+        #{szFrom,jdbcType=VARCHAR},
       </if>
       <if test="payTime != null" >
         #{payTime,jdbcType=TIMESTAMP},
@@ -417,7 +417,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMainExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.cxsl.sz.cxsl.impl.entity.TOrderMainExample" resultType="java.lang.Integer" >
     select count(*) from t_order_main
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -468,8 +468,8 @@
       <if test="record.otherAmount != null" >
         other_amount = #{record.otherAmount,jdbcType=DECIMAL},
       </if>
-      <if test="record.tradeFrom != null" >
-        trade_from = #{record.tradeFrom,jdbcType=VARCHAR},
+      <if test="record.szFrom != null" >
+        sz_from = #{record.szFrom,jdbcType=VARCHAR},
       </if>
       <if test="record.payTime != null" >
         pay_time = #{record.payTime,jdbcType=TIMESTAMP},
@@ -567,7 +567,7 @@
       payment_amount = #{record.paymentAmount,jdbcType=DECIMAL},
       buyer_payment_amount = #{record.buyerPaymentAmount,jdbcType=DECIMAL},
       other_amount = #{record.otherAmount,jdbcType=DECIMAL},
-      trade_from = #{record.tradeFrom,jdbcType=VARCHAR},
+      sz_from = #{record.szFrom,jdbcType=VARCHAR},
       pay_time = #{record.payTime,jdbcType=TIMESTAMP},
       pay_order_no = #{record.payOrderNo,jdbcType=VARCHAR},
       sale_type = #{record.saleType,jdbcType=TINYINT},
@@ -597,7 +597,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMain" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.cxsl.sz.cxsl.impl.entity.TOrderMain" >
     update t_order_main
     <set >
       <if test="platformId != null" >
@@ -639,8 +639,8 @@
       <if test="otherAmount != null" >
         other_amount = #{otherAmount,jdbcType=DECIMAL},
       </if>
-      <if test="tradeFrom != null" >
-        trade_from = #{tradeFrom,jdbcType=VARCHAR},
+      <if test="szFrom != null" >
+        sz_from = #{szFrom,jdbcType=VARCHAR},
       </if>
       <if test="payTime != null" >
         pay_time = #{payTime,jdbcType=TIMESTAMP},
@@ -720,7 +720,7 @@
     </set>
     where order_id = #{orderId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.cxsl.trade.cxsl.impl.entity.TOrderMain" >
+  <update id="updateByPrimaryKey" parameterType="com.cxsl.sz.cxsl.impl.entity.TOrderMain" >
     update t_order_main
     set platform_id = #{platformId,jdbcType=TINYINT},
       shop_id = #{shopId,jdbcType=INTEGER},
@@ -735,7 +735,7 @@
       payment_amount = #{paymentAmount,jdbcType=DECIMAL},
       buyer_payment_amount = #{buyerPaymentAmount,jdbcType=DECIMAL},
       other_amount = #{otherAmount,jdbcType=DECIMAL},
-      trade_from = #{tradeFrom,jdbcType=VARCHAR},
+      sz_from = #{szFrom,jdbcType=VARCHAR},
       pay_time = #{payTime,jdbcType=TIMESTAMP},
       pay_order_no = #{payOrderNo,jdbcType=VARCHAR},
       sale_type = #{saleType,jdbcType=TINYINT},
